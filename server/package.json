@@ -1,0 +1,31 @@
+{
+  "name": "vault-server",
+  "version": "0.1.0",
+  "description": "Vault storage control plane and API server",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "node ./node_modules/tsx/dist/cli.mjs watch src/index.ts",
+    "build": "node ./node_modules/prisma/build/index.js generate && node ./node_modules/typescript/bin/tsc",
+    "start": "node dist/index.js",
+    "db:generate": "node ./node_modules/prisma/build/index.js generate",
+    "db:push": "node ./node_modules/prisma/build/index.js db push",
+    "db:seed": "node ./node_modules/tsx/dist/cli.mjs src/scripts/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^22.10.2",
+    "prisma": "^5.22.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

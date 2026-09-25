@@ -1,0 +1,30 @@
+{
+  "name": "vault",
+  "version": "0.1.0",
+  "description": "Vault - Fault-tolerant distributed object storage system",
+  "private": true,
+  "scripts": {
+    "dev": "node ./node_modules/concurrently/dist/bin/concurrently.js -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"cyan.bold,magenta.bold\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "build": "npm run build --prefix server && npm run build --prefix client",
+    "build:server": "npm run build --prefix server",
+    "build:client": "npm run build --prefix client",
+    "start": "npm run start --prefix server",
+    "db:generate": "npm run db:generate --prefix server",
+    "db:push": "npm run db:push --prefix server",
+    "db:seed": "npm run db:seed --prefix server",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "distributed-storage",
+    "object-storage",
+    "fault-tolerant",
+    "high-availability"
+  ],
+  "author": "Vault Team",
+  "license": "MIT"
+}
